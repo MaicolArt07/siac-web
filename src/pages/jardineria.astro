@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Jardinería — SIAC"
+  description="Diseño, poda, control de plagas y planes de recuperación de jardines para condominios."
+  current="jardineria"
+>
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href={base}>Inicio</a> / Jardinería</p>
+    <span class="mono-tag">Áreas verdes</span>
+    <h1>Jardinería</h1>
+    <p>Servicio adaptable a sus necesidades, con detección de plagas, poda, diseño y planes de recuperación para jardines deteriorados.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <span class="mono-tag">El servicio</span>
+      <h2 style="margin-top:.4rem">Cuidado integral, dentro y fuera del condominio</h2>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">SIAC le permite disfrutar todo el año de un jardín agradable, para ello disponemos de un servicio adaptable a sus necesidades y a las necesidades del jardín, revisamos todos los elementos del jardín garantizando su buen estado.</p>
+      <h3 style="margin-top: var(--space-3)">Ofrecemos:</h3>
+      <ul class="checklist" style="margin-top: var(--space-2)">
+        <li><span class="tick">✓</span><span>Sistema de detección de plagas.</span></li>
+        <li><span class="tick">✓</span><span>Supervisión.</span></li>
+        <li><span class="tick">✓</span><span>Servicios Integrales de Jardinería.</span></li>
+        <li><span class="tick">✓</span><span>Mantenimiento de Jardines (áreas verdes dentro del condominio y áreas verdes exterior del condominio).</span></li>
+        <li><span class="tick">✓</span><span>Diseño y Decoración de Jardines.</span></li>
+        <li><span class="tick">✓</span><span>Fumigaciones.</span></li>
+        <li><span class="tick">✓</span><span>Sembrados e Instalaciones de Césped.</span></li>
+        <li>
+          <span class="tick">✓</span>
+          <span>
+            Plan salvataje de jardín.
+            <ul class="checklist-sub"><li>Arreglo del pasto.</li></ul>
+          </span>
+        </li>
+        <li><span class="tick">✓</span><span>Poda Mayores y Menores.</span></li>
+        <li><span class="tick">✓</span><span>Nos adaptamos a cada presupuesto.</span></li>
+      </ul>
+    </div>
+    <div class="photo-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Close_up_of_the_lawn_mower_with_grass_and_flowers_in_background.jpg" alt="Corte de césped junto a un jardín florido (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="photo-panel" style="min-height: 260px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Hedge_Trimming%2C_Alnwick_Gardens_-_geograph.org.uk_-_934163.jpg" alt="Poda de arbustos y mantenimiento de áreas verdes (foto de referencia)">
+    </div>
+    <div class="photo-panel" style="min-height: 240px; margin-top: var(--space-3)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Lawn_mower_on_the_grass_closeup.jpg" alt="Mantenimiento de césped con cortadora de jardín (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>¿Su jardín necesita un plan de recuperación?</h2>
+      <p>Hacemos un diagnóstico inicial sin costo.</p>
+    </div>
+    <a class="btn btn-dark" href={`${base}contacto`}>Pedir diagnóstico</a>
+  </div>
+</section>
+</Layout>

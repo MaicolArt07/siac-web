@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const condominios = [
+  { nombre: 'Ingavi', logo: '/logo/logo-ingavi.png' },
+  { nombre: 'Chiquitana', logo: '/logo/logo-chiquitana.bmp' },
+  { nombre: 'Marbella', logo: '/logo/logo-marbella.jpg' },
+  { nombre: 'Mozart', logo: '/logo/logo-mozart.jpg' },
+  { nombre: 'Portales', logo: '/logo/logo-portales.png' },
+  { nombre: 'Sevilla', logo: '/logo/logo-suri.jpg' },
+  { nombre: 'Shalom', logo: '/logo/logo-shalom.png' },
+];
+---
+<Layout
+  title="Condominios — SIAC"
+  description="Seleccione su condominio para ingresar al Sistema Integral de Administración de Condominios (ADCOM-SIAC)."
+  current="condominios"
+>
+<section class="condo-hero">
+  <div class="container">
+    <h1>Condominios SIAC</h1>
+    <p>Seleccione su condominio para ingresar al sistema.</p>
+    <div class="condo-search">
+      <input type="search" id="condo-search-input" placeholder="Buscar condominio..." aria-label="Buscar condominio">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="condo-grid" id="condo-grid">
+      {condominios.map((condo) => (
+        <div class="condo-card" data-name={condo.nombre.toLowerCase()}>
+          <div class="condo-logo"><img src={condo.logo} alt={`Logo de Condominio ${condo.nombre}`} loading="lazy"></div>
+          <h3>{condo.nombre.toUpperCase()}</h3>
+          <p>Sistema Integral de Administración de Condominios.</p>
+          <a class="btn btn-blue" href="https://condominios.siac.com.bo/login">Ingresar</a>
+        </div>
+      ))}
+    </div>
+    <p class="condo-empty" id="condo-empty">No encontramos un condominio con ese nombre.</p>
+  </div>
+</section>
+
+<script>
+  const input = document.getElementById('condo-search-input');
+  const cards = Array.from(document.querySelectorAll('.condo-card'));
+  const empty = document.getElementById('condo-empty');
+
+  input?.addEventListener('input', () => {
+    const term = input.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach((card) => {
+      const match = card.getAttribute('data-name')?.includes(term);
+      card.classList.toggle('is-hidden', !match);
+      if (match) visible++;
+    });
+    empty?.classList.toggle('is-visible', visible === 0);
+  });
+</script>
+</Layout>

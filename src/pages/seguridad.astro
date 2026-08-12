@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Seguridad — SIAC"
+  description="Guardias y supervisores con monitoreo 24 horas, capacitados en primeros auxilios y protocolos de emergencia."
+  current="seguridad"
+>
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href={base}>Inicio</a> / Seguridad</p>
+    <span class="mono-tag">Seguridad física</span>
+    <h1>Seguridad</h1>
+    <p>Brindamos servicios de seguridad física a través de guardias y supervisores que custodian las propiedades, contra pérdida, robos o cualquier acto de violencia que afecte la integridad de las personas que confiaron en nosotros.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <span class="mono-tag">Cobertura</span>
+      <h2 style="margin-top:.4rem">Ofrecemos:</h2>
+      <ul class="checklist" style="margin-top: var(--space-3)">
+        <li><span class="tick">✓</span><span>Sistema de Seguridad Integral.</span></li>
+        <li><span class="tick">✓</span><span>Monitoreo de su inmueble las 24 hrs del día.</span></li>
+        <li><span class="tick">✓</span><span>Personal con experiencia.</span></li>
+        <li><span class="tick">✓</span><span>Presentación impecable — uniformes.</span></li>
+        <li><span class="tick">✓</span><span>Capacitación en Primeros Auxilios y emergencias.</span></li>
+        <li><span class="tick">✓</span><span>Nos adaptamos a cada presupuesto.</span></li>
+      </ul>
+    </div>
+    <div class="photo-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Three_Surveillance_cameras.jpg" alt="Sistema de cámaras de videovigilancia (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="photo-row" style="grid-template-columns: repeat(2, 1fr)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/CCTV_cameras_in_Mumbai.jpg" alt="Sistema de cámaras de videovigilancia en poste exterior (foto de referencia)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Vandal_dome_style_security_camera_in_parking_garage.jpg" alt="Cámara de seguridad tipo domo en estacionamiento (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Evalúe la seguridad actual de su condominio</h2>
+      <p>Coordinamos una visita técnica sin costo con la directiva.</p>
+    </div>
+    <a class="btn btn-dark" href={`${base}contacto`}>Solicitar visita</a>
+  </div>
+</section>
+</Layout>

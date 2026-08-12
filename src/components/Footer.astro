@@ -1,0 +1,34 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src={`${base}logo/logo-horizontal.png`} alt="SIAC — Servicios Integrales en Administración de Condominios">
+        <p>Servicios Integrales en Administración de Condominio. Administración, seguridad, limpieza, jardinería y mantenimiento para condominios y edificios en Bolivia.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <a href={`${base}administracion`}>Administración</a>
+        <a href={`${base}seguridad`}>Seguridad</a>
+        <a href={`${base}limpieza`}>Limpieza</a>
+        <a href={`${base}jardineria`}>Jardinería</a>
+        <a href={`${base}mantenimiento`}>Mantenimiento</a>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <a href={`${base}nosotros`}>Nosotros</a>
+        <a href={`${base}contacto`}>Contáctenos</a>
+        <a href={`${base}condominios`}>Portal de condominio</a>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <a href="https://www.facebook.com/siac.scz">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2017 © SIAC.COM.BO Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>

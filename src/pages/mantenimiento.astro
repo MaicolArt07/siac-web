@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Mantenimiento — SIAC"
+  description="Mantenimiento de piscinas: control de cloro y pH, limpieza técnica programada."
+  current="mantenimiento"
+>
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href={base}>Inicio</a> / Mantenimiento</p>
+    <span class="mono-tag">Piscinas</span>
+    <h1>Mantenimiento</h1>
+    <p>Le ofrecemos un buen mantenimiento de la piscina, garantizando el perfecto funcionamiento.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <span class="mono-tag">Rutina técnica</span>
+      <h2 style="margin-top:.4rem">Un protocolo, no una visita esporádica</h2>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">El mantenimiento de piscinas es indispensable para disfrutar de ellas sin temor; analizar los valores del cloro o los del pH son aspectos que no debes perder de vista.</p>
+      <h3 style="margin-top: var(--space-3)">Ofrecemos:</h3>
+      <ul class="checklist" style="margin-top: var(--space-2)">
+        <li><span class="tick">✓</span><span>Limpieza del fondo de la superficie del agua de la piscina con recolectora.</span></li>
+        <li><span class="tick">✓</span><span>Limpieza de los Skimmers de la piscina.</span></li>
+        <li><span class="tick">✓</span><span>Limpieza del pre filtro de la bomba.</span></li>
+        <li><span class="tick">✓</span><span>Limpieza del fondo de la piscina con el aspirador de fondos.</span></li>
+        <li><span class="tick">✓</span><span>Limpieza de las paredes de la piscina.</span></li>
+        <li><span class="tick">✓</span><span>Control de los niveles del Cloro y del pH.</span></li>
+        <li><span class="tick">✓</span><span>Control periódica de los niveles del agua y si las paredes están en perfectas condiciones.</span></li>
+        <li><span class="tick">✓</span><span>Nos adaptamos a cada presupuesto.</span></li>
+      </ul>
+    </div>
+    <div class="photo-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Swimming_pool_maintenance_in_Perth%2C_Western_Australia%2C_May_2021_01.jpg" alt="Limpieza de piscina con recolectora de superficie (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="photo-panel" style="min-height: 260px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Swimming_pool_maintenance_in_Perth%2C_Western_Australia%2C_May_2021_04.jpg" alt="Técnico realizando mantenimiento técnico de piscina (foto de referencia)">
+    </div>
+    <div class="photo-row" style="margin-top: var(--space-3)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Swimming_pool_maintenance_in_Perth%2C_Western_Australia%2C_May_2021_02.jpg" alt="Limpieza del fondo de la piscina con recolectora (foto de referencia)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Swimming_pool_maintenance_in_Perth%2C_Western_Australia%2C_May_2021_01.jpg" alt="Control de niveles y limpieza de agua de piscina (foto de referencia)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Swimming_pool_maintenance_in_Perth%2C_Western_Australia%2C_May_2021_04.jpg" alt="Revisión de paredes y escalera de piscina (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Programe el mantenimiento de su piscina</h2>
+      <p>Definimos la frecuencia según el uso de su condominio.</p>
+    </div>
+    <a class="btn btn-dark" href={`${base}contacto`}>Programar visita</a>
+  </div>
+</section>
+</Layout>

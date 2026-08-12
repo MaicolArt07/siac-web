@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Nosotros — SIAC"
+  description="Misión, visión y valores de SIAC, empresa boliviana de administración integral de condominios."
+  current="nosotros"
+>
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href={base}>Inicio</a> / Nosotros</p>
+    <span class="mono-tag">Quiénes somos</span>
+    <h1>Nosotros</h1>
+    <p>Empresa legalmente constituida en Bolivia, especializada en administración integral de condominios y edificios.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <span class="mono-tag">Quiénes somos</span>
+      <h2 style="margin-top:.4rem">Un equipo joven, dinámico y comprometido</h2>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">Somos una empresa legalmente constituida, dirigida por un equipo profesional joven, amable, dinámico y comprometido con lograr la satisfacción plena de las necesidades de nuestros clientes, ofreciendo soluciones administrativas y operativas acorde a nuestros servicios adaptados a cada situación. Somos la mejor opción en cuanto a Servicios Integrales en Administración, Seguridad, Limpieza, Paisajismo, Mantenimiento de Piscina y Mantenimiento General, basándonos en una cultura de mejora constante e innovación empresarial.</p>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">Conocemos las verdaderas necesidades de nuestros clientes, lo cual nos permite planear, ejecutar y sobre todo controlar el servicio que brindamos de modo personalizado, bajo estándares de calidad.</p>
+    </div>
+    <div class="photo-panel">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Edificios de condominios administrados por SIAC (foto de referencia)">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container split">
+    <div>
+      <span class="mono-tag">Misión</span>
+      <h2 style="margin-top:.4rem">Gestión eficiente, transparente y a medida</h2>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">Entregar servicios administrativos para condominios con gestión eficiente de los recursos, garantizando transparencia, fomentando la convivencia comunitaria y adaptándose a las necesidades específicas de cada cliente.</p>
+    </div>
+    <div>
+      <span class="mono-tag">Visión</span>
+      <h2 style="margin-top:.4rem">Un aliado estratégico para su patrimonio</h2>
+      <p style="margin-top: var(--space-2); color: var(--text-secondary)">Ser líderes del mercado local mediante tecnología de punta y atención personalizada, contribuyendo a la plusvalía del patrimonio de nuestros clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <blockquote class="pull-quote">
+      <p>No deje en manos de cualquiera la inversión más importante de su vida, disfrútela y permita que verdaderos profesionales se ocupen de lo demás.</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="mono-tag">Valores</span>
+      <h2>El acrónimo que define cómo trabajamos</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-item"><span class="letter">S</span><strong>Seguridad</strong><p>Confianza, firmeza.</p></div>
+      <div class="value-item"><span class="letter">I</span><strong>Integridad</strong><p>Honestidad, honradez.</p></div>
+      <div class="value-item"><span class="letter">A</span><strong>Agilidad</strong><p>Facilidad, prontitud.</p></div>
+      <div class="value-item"><span class="letter">C</span><strong>Capacidad</strong><p>Adecuación, competencia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Conozca de cerca cómo administramos su condominio</h2>
+      <p>Escríbanos y coordinamos una visita con la directiva.</p>
+    </div>
+    <a class="btn btn-dark" href={`${base}contacto`}>Contáctenos</a>
+  </div>
+</section>
+</Layout>

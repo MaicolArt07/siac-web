@@ -1,0 +1,106 @@
+/*
+  Design tokens — brand blue and green sampled from SIAC's real logo
+  (SIAC wordmark in cobalt blue over a green/olive skyscraper mark).
+  Semantic surface/text tokens below drive light + dark mode; component
+  CSS should prefer the semantic names over raw color scales where the
+  value needs to flip between themes.
+*/
+:root {
+  /* Brand blue — from the SIAC wordmark */
+  --navy-950: #0e2038;
+  --navy-900: #16324f;
+  --blue-800: #1a4585;
+  --blue-700: #1e4f9c;
+  --blue-600: #2458b0;
+  --blue-500: #3f72c4;
+  --blue-100: #e3ecfa;
+  --blue-050: #f1f6fd;
+
+  /* Olive accent — jardinería, growth, renewal */
+  --olive-700: #5c7a2c;
+  --olive-600: #7a9c3d;
+  --olive-500: #9dbf5f;
+  --olive-100: #eef3e2;
+
+  /* Green — from the SIAC building mark (primary CTA / accent) */
+  --green-800: #4c6e22;
+  --green-700: #6b9330;
+  --green-600: #8ab948;
+  --green-100: #eef5df;
+  --sky-050: #eef6fb;
+
+  /* Neutrals */
+  --ink-900: #16201f;
+  --ink-700: #384341;
+  --ink-500: #646464;
+  --ink-300: #9c9c9c;
+  --ink-100: #d9dcda;
+  --paper-000: #ffffff;
+  --paper-050: #f7f8f6;
+
+  /* Signal */
+  --signal-red: #a50f0b;
+  --seal-red: #a50f0b;
+
+  /* Type */
+  --font-display: 'Spectral', 'Iowan Old Style', serif;
+  --font-body: 'Public Sans', Arial, sans-serif;
+  --font-label: 'Public Sans', Arial, sans-serif;
+
+  /* Rhythm */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  --radius: 2px;
+  --max-width: 1200px;
+
+  --rule: 1px solid var(--ink-100);
+  --rule-dark: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* ---- Semantic surface/text tokens: light theme (default) ---- */
+  --surface-page: #ffffff;
+  --surface-alt: var(--sky-050);
+  --surface-card: #ffffff;
+  --surface-header: #ffffff;
+  --text-primary: var(--navy-950);
+  --text-secondary: var(--ink-500);
+  --text-on-dark: rgba(255, 255, 255, 0.82);
+  --border-subtle: var(--ink-100);
+  --shadow-color: rgba(11, 43, 58, 0.32);
+}
+
+/* System preference, unless the user has explicitly chosen a theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-page: #0e1620;
+    --surface-alt: #141f2c;
+    --surface-card: #1b2c3f;
+    --surface-header: #0e1620;
+    --text-primary: #eef3f9;
+    --text-secondary: #aebccb;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --shadow-color: rgba(0, 0, 0, 0.55);
+    --blue-100: #1c3252;
+    --green-100: #22371c;
+    --ink-100: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Explicit user choice always wins */
+:root[data-theme="dark"] {
+  --surface-page: #0e1620;
+  --surface-alt: #141f2c;
+  --surface-card: #1b2c3f;
+  --surface-header: #0e1620;
+  --text-primary: #eef3f9;
+  --text-secondary: #aebccb;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --shadow-color: rgba(0, 0, 0, 0.55);
+  --blue-100: #1c3252;
+  --green-100: #22371c;
+  --ink-100: rgba(255, 255, 255, 0.12);
+}
