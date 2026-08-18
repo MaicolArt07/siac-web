@@ -1,19 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
 const condominios = [
-  { nombre: 'Ingavi', logo: '/logo/logo-ingavi.png' },
-  { nombre: 'Chiquitana', logo: '/logo/logo-chiquitana.bmp' },
-  { nombre: 'Marbella', logo: '/logo/logo-marbella.jpg' },
-  { nombre: 'Mozart', logo: '/logo/logo-mozart.jpg' },
-  { nombre: 'Portales', logo: '/logo/logo-portales.png' },
-  { nombre: 'Sevilla', logo: '/logo/logo-suri.jpg' },
-  { nombre: 'Shalom', logo: '/logo/logo-shalom.png' },
+  { nombre: 'Ingavi', logo: `${base}logo/logo-ingavi.png` },
+  { nombre: 'Chiquitana', logo: `${base}logo/logo-chiquitana.bmp` },
+  { nombre: 'Marbella', logo: `${base}logo/logo-marbella.jpg` },
+  { nombre: 'Mozart', logo: `${base}logo/logo-mozart.jpg` },
+  { nombre: 'Portales', logo: `${base}logo/logo-portales.png` },
+  { nombre: 'Sevilla', logo: `${base}logo/logo-suri.jpg` },
+  { nombre: 'Shalom', logo: `${base}logo/logo-shalom.png` },
 ];
 ---
 <Layout
   title="Condominios — SIAC"
-  description="Seleccione su condominio para ingresar al Sistema Integral de Administración de Condominios (ADCOM-SIAC)."
+  description="Seleccione su condominio para ingresar al Sistema Integral de Administración de Condominios."
   current="condominios"
 >
 <section class="condo-hero">

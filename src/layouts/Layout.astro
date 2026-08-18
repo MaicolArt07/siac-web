@@ -1,5 +1,4 @@
 ---
-import Topbar from '../components/Topbar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -28,7 +27,6 @@ const base = import.meta.env.BASE_URL;
 <link rel="stylesheet" href={`${base}css/main.css`}>
 </head>
 <body>
-<Topbar />
 <Header current={current} />
 <slot />
 <Footer />
