@@ -8,16 +8,16 @@ const base = import.meta.env.BASE_URL;
   current="contacto"
 >
 <section class="page-hero">
-  <div class="container">
+  <div class="container" style="max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center">
     <p class="breadcrumb"><a href={base}>Inicio</a> / Contáctenos</p>
     <span class="mono-tag">Hablemos</span>
-    <h1>Contáctenos</h1>
-    <p>Responda unos datos básicos y le preparamos una propuesta de administración a medida.</p>
+    <h1 style="max-width: none">Contáctenos</h1>
+    <p style="max-width: none">Responda unos datos básicos y le preparamos una propuesta de administración a medida.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container split">
+<section class="section" style="padding-top: var(--space-3)">
+  <div class="container" style="max-width: 640px">
     <form class="form-card" action="#" method="post">
       <div class="field">
         <label for="nombre">Nombre completo</label>
@@ -52,15 +52,6 @@ const base = import.meta.env.BASE_URL;
       </div>
       <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center">Enviar solicitud</button>
     </form>
-    <div>
-      <span class="mono-tag">Otros canales</span>
-      <h2 style="margin-top:.4rem">Mientras confirmamos los datos oficiales</h2>
-      <p style="margin-top: var(--space-2); color: var(--text-secondary)">El sitio original de SIAC no publica teléfono, correo ni dirección física. Escríbanos por Facebook mientras se confirman los canales directos de atención.</p>
-      <ul class="checklist" style="margin-top: var(--space-3)">
-        <li><span class="tick">✓</span><span><a href="https://www.facebook.com/siac.scz" style="text-decoration: underline">Facebook — Servicios Integrales en Administración de Condominio SIAC</a></span></li>
-        <li><span class="tick">✓</span><span>Copropietarios: ingrese al <a href={`${base}condominios`} style="text-decoration: underline">portal de condominio</a> para su estado de cuenta.</span></li>
-      </ul>
-    </div>
   </div>
 </section>
 </Layout>
