@@ -562,11 +562,14 @@ p { margin: 0; }
 @media (max-width: 700px) { .photo-row { grid-template-columns: 1fr; } }
 
 /* ---------- Stat row ---------- */
-.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); border-top: 2px solid var(--ink-100); }
-.stat-item { padding-top: var(--space-2); }
-.stat-item .num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--blue-600); display: block; }
-.stat-item span.label { font-size: 0.85rem; color: var(--text-secondary); }
-@media (max-width: 700px) { .stat-row { grid-template-columns: 1fr; gap: var(--space-2); } }
+.stat-table { width: 100%; border-collapse: collapse; table-layout: fixed; border-top: 2px solid var(--ink-100); }
+.stat-table td { text-align: center; vertical-align: top; padding: var(--space-2) var(--space-2) 0; }
+.stat-table .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--blue-600); display: block; }
+.stat-table .label { display: block; margin-top: 0.25rem; font-size: 0.85rem; color: var(--text-secondary); }
+@media (max-width: 700px) {
+  .stat-table, .stat-table tbody, .stat-table tr { display: block; width: 100%; }
+  .stat-table td { display: block; width: 100%; padding: var(--space-2) 0 0; }
+}
 
 /* ---------- Statement / receipt card (used on admin & maintenance pages) ---------- */
 .statement-card {
