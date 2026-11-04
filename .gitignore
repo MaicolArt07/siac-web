@@ -20,3 +20,6 @@ npm-debug.log*
 # scratch assets used to prep optimized images, not part of the site
 scratch-images/
 process-images*.cjs
+
+# packaged static build for manual upload to non-Node hosting
+siac-web-build.zip

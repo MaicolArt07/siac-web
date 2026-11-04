@@ -1,15 +1,45 @@
 ---
+import { whatsappLink, FACEBOOK_URL } from '../config/site';
 const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
 ---
-<footer class="site-footer">
+<section class="portal-banner-wrap" aria-label="Portal de copropietarios">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src={`${base}logo/logo-horizontal.png`} alt="SIAC — Servicios Integrales en Administración de Condominios">
-        <p>Servicios Integrales en Administración de Condominio. Administración, seguridad, limpieza, jardinería y mantenimiento para condominios y edificios en Bolivia.</p>
+    <div class="portal-banner">
+      <span class="portal-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><rect x="8" y="16" width="10" height="18" fill="#3f72c4"/><rect x="20" y="8" width="12" height="26" fill="#8ab948"/></svg>
+      </span>
+      <h2 class="portal-title">Portal SIAC</h2>
+      <p class="portal-text">Sus cuentas, pagos y reportes del condominio, al día y en un solo lugar.</p>
+      <a class="btn-pill btn-pill-light" href={`${base}condominios`}>Ingresar al portal</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-lead">
+      <img class="footer-logo" src={`${base}logo/logo-horizontal.png`} alt="SIAC — Servicios Integrales en Administración de Condominios">
+      <h2 class="footer-title">Reciba una propuesta para su condominio</h2>
+      <p>Déjenos su correo y le contactamos con una propuesta de administración a medida. Sin compromiso.</p>
+      <form class="footer-subscribe" data-footer-form>
+        <label class="visually-hidden" for="footer-email">Correo electrónico</label>
+        <input type="email" id="footer-email" name="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <button type="submit">Solicitar</button>
+      </form>
+      <div class="footer-social">
+        <a href={FACEBOOK_URL} target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.7C11 2 10 3.6 10 6.3V8H8v3h2v11h4V11h2.7l.3-3h-3z"/></svg>
+        </a>
+        <a href={whatsappLink()} target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.3 23.7l6.2-1.6A11.8 11.8 0 0 0 24 12a11.7 11.7 0 0 0-3.5-8.5zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.6zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/></svg>
+        </a>
       </div>
+    </div>
+
+    <nav class="footer-cols" aria-label="Pie de página">
       <div>
-        <h4>Servicios</h4>
+        <h3>Servicios</h3>
         <a href={`${base}administracion`}>Administración</a>
         <a href={`${base}seguridad`}>Seguridad</a>
         <a href={`${base}limpieza`}>Limpieza</a>
@@ -17,18 +47,22 @@ const base = import.meta.env.BASE_URL;
         <a href={`${base}mantenimiento`}>Mantenimiento</a>
       </div>
       <div>
-        <h4>Empresa</h4>
+        <h3>Empresa</h3>
         <a href={`${base}nosotros`}>Nosotros</a>
-        <a href={`${base}contacto`}>Contáctenos</a>
-        <a href={`${base}condominios`}>Portal de condominio</a>
+        <a href={`${base}condominios`}>Condominios</a>
+        <a href={FACEBOOK_URL} target="_blank" rel="noopener">Facebook</a>
       </div>
       <div>
-        <h4>Redes</h4>
-        <a href="https://www.facebook.com/siac.scz">Facebook</a>
+        <h3>Ayuda</h3>
+        <a href={`${base}contacto`}>Contáctenos</a>
+        <a href={whatsappLink()} target="_blank" rel="noopener">WhatsApp</a>
+        <a href={`${base}condominios`}>Portal de copropietarios</a>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>2017 © SIAC.COM.BO Todos los derechos reservados</span>
-    </div>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© {year} SIAC — Servicios Integrales en Administración de Condominio</span>
+    <span class="footer-motto">Seguridad · Integridad · Agilidad · Capacidad</span>
   </div>
 </footer>

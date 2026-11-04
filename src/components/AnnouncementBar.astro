@@ -1,0 +1,27 @@
+---
+// Barra superior con mensajes que rotan (salen por la izquierda, entran por la derecha).
+const base = import.meta.env.BASE_URL;
+const messages = [
+  { text: 'Administración transparente con el sistema ADCOM-SIAC', cta: 'Conózcalo', href: `${base}administracion` },
+  { text: 'Reportes financieros mensuales para cada copropietario', cta: 'Ver más', href: `${base}administracion` },
+  { text: '¿Ya es copropietario?', cta: 'Ingrese al portal', href: `${base}condominios` },
+  { text: 'Propuesta de administración sin compromiso', cta: 'Solicítela aquí', href: `${base}contacto` },
+];
+---
+<div class="announce" data-announce aria-roledescription="carrusel" aria-label="Novedades SIAC">
+  <button type="button" class="announce-arrow" data-announce-prev aria-label="Mensaje anterior">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="announce-track" aria-live="polite">
+    {messages.map((m, i) => (
+      <p class:list={['announce-item', { 'is-active': i === 0 }]} aria-hidden={i === 0 ? undefined : 'true'}>
+        <span>{m.text}</span>
+        <span class="announce-sep" aria-hidden="true">|</span>
+        <a href={m.href} tabindex={i === 0 ? undefined : '-1'}>{m.cta}</a>
+      </p>
+    ))}
+  </div>
+  <button type="button" class="announce-arrow" data-announce-next aria-label="Mensaje siguiente">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>

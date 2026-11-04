@@ -6,49 +6,20 @@ const base = import.meta.env.BASE_URL;
   title="SIAC — Administración integral de condominios en Bolivia"
   description="SIAC administra condominios y edificios: administración, seguridad, limpieza, jardinería y mantenimiento."
   current="inicio"
+  overlayHeader
 >
-<section class="hero">
-  <div class="hero-inner">
-    <div class="wrap">
-      <p class="hero-eyebrow">Administración de condominios · Bolivia</p>
-      <h1>No deje en manos de cualquiera <em>la inversión más importante</em> de su vida.</h1>
-      <p class="hero-lede">SIAC administra condominios y edificios con un sistema propio de registro y control económico para que su comunidad viva con tranquilidad.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href={`${base}contacto`}>Solicitar cotización →</a>
-        <a class="btn btn-ghost" href={`${base}nosotros`}>Conocer más sobre SIAC</a>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="brand-mark-lg" viewBox="0 0 40 40">
-        <rect x="4" y="14" width="12" height="24" fill="#1e4f9c"/>
-        <rect x="18" y="4" width="14" height="34" fill="#6b9330"/>
-      </svg>
-      <span class="hero-float-card hero-float-1">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b9330" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
-        Monitoreo 24 hrs
-      </span>
-      <span class="hero-float-card hero-float-2">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e4f9c" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
-        Reportes mensuales
-      </span>
-      <span class="hero-float-card hero-float-3">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b9330" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        Gestión transparente
-      </span>
-      <span class="hero-float-card hero-float-4">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e4f9c" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        Pagos verificados
-      </span>
-      <span class="hero-chip hero-chip-1" title="Planificación de asambleas">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b9330" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-      </span>
-      <span class="hero-chip hero-chip-2" title="Avisos a copropietarios">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e4f9c" stroke-width="1.8"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
-      </span>
-      <div class="hero-dots">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
+<section class="hero hero-photo">
+  <picture class="hero-bg" aria-hidden="true">
+    <source media="(max-width: 700px)" srcset={`${base}images/hero-condominio-sm.webp`}>
+    <img src={`${base}images/hero-condominio.webp`} alt="" fetchpriority="high">
+  </picture>
+  <div class="hero-content container">
+    <p class="hero-eyebrow">Administración de condominios · Bolivia</p>
+    <h1>No deje en manos de cualquiera la inversión más importante</h1>
+    <p class="hero-lede">SIAC administra condominios y edificios con un sistema propio de registro y control económico, para que su comunidad viva con tranquilidad.</p>
+    <div class="hero-actions">
+      <a class="btn-pill btn-pill-brand" href={`${base}contacto`}>Solicitar cotización</a>
+      <a class="hero-link" href={`${base}nosotros`}>Conocer más sobre SIAC →</a>
     </div>
   </div>
 </section>

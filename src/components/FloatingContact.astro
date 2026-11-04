@@ -1,0 +1,32 @@
+---
+// Pestaña "invitación" lateral + botón flotante de WhatsApp + modal con formulario.
+import ContactForm from './ContactForm.astro';
+import { whatsappLink } from '../config/site';
+---
+<div class="invite-tab" id="invite-tab">
+  <button type="button" class="invite-close" aria-label="Ocultar invitación" data-invite-close>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button type="button" class="invite-card" data-contact-open aria-haspopup="dialog" aria-controls="contact-modal">
+    <span class="invite-kicker">Sin compromiso</span>
+    <span class="invite-title">Pida su<br>cotiza&shy;ción</span>
+    <span class="invite-cta">Escríbanos →</span>
+  </button>
+</div>
+
+<a class="wa-float" href={whatsappLink()} target="_blank" rel="noopener" aria-label="Escríbanos por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.3 23.7l6.2-1.6A11.8 11.8 0 0 0 24 12a11.7 11.7 0 0 0-3.5-8.5zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.6zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/></svg>
+  <span class="wa-label">¿Hablamos?</span>
+</a>
+
+<dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-modal-title">
+  <div class="contact-modal-inner">
+    <button type="button" class="modal-close" aria-label="Cerrar" data-contact-close>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <span class="mono-tag">Hablemos</span>
+    <h2 id="contact-modal-title">Solicite su propuesta</h2>
+    <p class="modal-lede">Cuéntenos sobre su condominio y le preparamos una propuesta de administración a medida.</p>
+    <ContactForm prefix="modal" compact />
+  </div>
+</dialog>

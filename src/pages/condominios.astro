@@ -2,14 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 
+// activo: true  → SIAC lo administra actualmente (botón "Ingresar").
+// activo: false → se muestra como "En construcción".
 const condominios = [
-  { nombre: 'Ingavi', logo: `${base}logo/logo-ingavi.png` },
-  { nombre: 'Chiquitana', logo: `${base}logo/logo-chiquitana.bmp` },
-  { nombre: 'Marbella', logo: `${base}logo/logo-marbella.jpg` },
-  { nombre: 'Mozart', logo: `${base}logo/logo-mozart.jpg` },
-  { nombre: 'Portales', logo: `${base}logo/logo-portales.png` },
-  { nombre: 'Sevilla', logo: `${base}logo/logo-suri.jpg` },
-  { nombre: 'Shalom', logo: `${base}logo/logo-shalom.png` },
+  { nombre: 'Ingavi', logo: `${base}logo/logo-ingavi.png`, activo: true },
+  { nombre: 'Sevilla Sur I', logo: `${base}logo/logo-suri.jpg`, activo: true },
+  { nombre: 'Marbella', logo: `${base}logo/logo-marbella.jpg`, activo: true },
+  { nombre: 'Portales', logo: `${base}logo/logo-portales.png`, activo: true },
+  { nombre: 'Chiquitana', logo: `${base}logo/logo-chiquitana.bmp`, activo: false },
+  { nombre: 'Mozart', logo: `${base}logo/logo-mozart.jpg`, activo: false },
+  { nombre: 'Shalom', logo: `${base}logo/logo-shalom.png`, activo: false },
 ];
 ---
 <Layout
@@ -31,11 +33,21 @@ const condominios = [
   <div class="container">
     <div class="condo-grid" id="condo-grid">
       {condominios.map((condo) => (
-        <div class="condo-card" data-name={condo.nombre.toLowerCase()}>
+        <div class:list={['condo-card', { 'is-soon': !condo.activo }]} data-name={condo.nombre.toLowerCase()}>
+          {!condo.activo && <span class="condo-badge">En construcción</span>}
           <div class="condo-logo"><img src={condo.logo} alt={`Logo de Condominio ${condo.nombre}`} loading="lazy"></div>
           <h3>{condo.nombre.toUpperCase()}</h3>
-          <p>Sistema Integral de Administración de Condominios.</p>
-          <a class="btn btn-blue" href="https://condominios.siac.com.bo/login">Ingresar</a>
+          {condo.activo ? (
+            <>
+              <p>Sistema Integral de Administración de Condominios.</p>
+              <a class="btn btn-blue" href="https://condominios.siac.com.bo/login">Ingresar</a>
+            </>
+          ) : (
+            <>
+              <p>Este acceso estará disponible próximamente.</p>
+              <span class="btn btn-disabled" aria-disabled="true">Próximamente</span>
+            </>
+          )}
         </div>
       ))}
     </div>
