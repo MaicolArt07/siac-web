@@ -3,15 +3,16 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 
 // activo: true  → SIAC lo administra actualmente (botón "Ingresar").
-// activo: false → se muestra como "En construcción".
+// activo: false → tarjeta "En construcción" SIN nombre ni logo del condominio
+//                 (no publicar datos de condominios que SIAC no administra).
 const condominios = [
   { nombre: 'Ingavi', logo: `${base}logo/logo-ingavi.png`, activo: true },
   { nombre: 'Sevilla Sur I', logo: `${base}logo/logo-suri.jpg`, activo: true },
   { nombre: 'Marbella', logo: `${base}logo/logo-marbella.jpg`, activo: true },
   { nombre: 'Portales', logo: `${base}logo/logo-portales.png`, activo: true },
-  { nombre: 'Chiquitana', logo: `${base}logo/logo-chiquitana.bmp`, activo: false },
-  { nombre: 'Mozart', logo: `${base}logo/logo-mozart.jpg`, activo: false },
-  { nombre: 'Shalom', logo: `${base}logo/logo-shalom.png`, activo: false },
+  { activo: false },
+  { activo: false },
+  { activo: false },
 ];
 ---
 <Layout
@@ -32,11 +33,31 @@ const condominios = [
 <section class="section">
   <div class="container">
     <div class="condo-grid" id="condo-grid">
-      {condominios.map((condo) => (
-        <div class:list={['condo-card', { 'is-soon': !condo.activo }]} data-name={condo.nombre.toLowerCase()}>
+      {condominios.map((condo, i) => (
+        <div class:list={['condo-card', { 'is-soon': !condo.activo }]} data-name={condo.activo ? condo.nombre.toLowerCase() : 'nuevo condominio'}>
           {!condo.activo && <span class="condo-badge">En construcción</span>}
-          <div class="condo-logo"><img src={condo.logo} alt={`Logo de Condominio ${condo.nombre}`} loading="lazy"></div>
-          <h3>{condo.nombre.toUpperCase()}</h3>
+          {condo.activo ? (
+            <div class="condo-logo"><img src={condo.logo} alt={`Logo de Condominio ${condo.nombre}`} loading="lazy"></div>
+          ) : (
+            <div class="condo-logo condo-logo-soon" role="img" aria-label="Acceso en construcción">
+              <svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true">
+                <!-- casco -->
+                <path d="M38 34a22 22 0 0 1 44 0v4H38z" fill="#f2a516"/>
+                <path d="M56 13h8v21h-8z" fill="#d98a00"/>
+                <rect x="32" y="37" width="56" height="6" rx="3" fill="#d98a00"/>
+                <!-- barrera -->
+                <rect x="14" y="50" width="92" height="14" rx="2" fill="#fff"/>
+                <clipPath id={`barrier-${i}`}><rect x="14" y="50" width="92" height="14" rx="2"/></clipPath>
+                <g clip-path={`url(#barrier-${i})`} fill="#f2a516">
+                  <path d="M10 64l14-14h10L20 64zM34 64l14-14h10L44 64zM58 64l14-14h10L68 64zM82 64l14-14h10L92 64z"/>
+                </g>
+                <rect x="14" y="50" width="92" height="14" rx="2" fill="none" stroke="#7a5300" stroke-width="1.5"/>
+                <rect x="22" y="64" width="5" height="12" fill="#7a5300"/>
+                <rect x="93" y="64" width="5" height="12" fill="#7a5300"/>
+              </svg>
+            </div>
+          )}
+          <h3>{condo.activo ? condo.nombre.toUpperCase() : 'NUEVO CONDOMINIO'}</h3>
           {condo.activo ? (
             <>
               <p>Sistema Integral de Administración de Condominios.</p>

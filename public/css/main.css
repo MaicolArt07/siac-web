@@ -147,7 +147,7 @@ p { margin: 0; }
   background: var(--green-700);
   color: var(--paper-000);
   font-size: 1.06rem; font-weight: 700;
-  margin-right: 0.4rem;
+  margin-left: 0.3rem;
   transition: background .2s ease;
 }
 .nav-pill:hover, .nav-pill[aria-current="page"] { background: var(--green-800); }
@@ -948,3 +948,11 @@ html, body { overflow-x: clip; }
   border: 1px dashed var(--border-subtle);
   cursor: not-allowed;
 }
+.condo-logo-soon {
+  background:
+    repeating-linear-gradient(135deg, rgba(242,165,22,0.10) 0 12px, transparent 12px 24px),
+    #fff8e8;
+  border: 1px dashed rgba(217,138,0,0.45);
+}
+.condo-logo-soon svg { width: auto; height: 74px; }
+@media (max-width: 520px) { .nav-pill { padding: 0.55rem 0.85rem; font-size: 0.85rem; margin-left: 0; } }
